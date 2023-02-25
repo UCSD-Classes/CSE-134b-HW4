@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Custom Dialogs Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="Jeffrey Luu"/>
+    <link href="assets/images/favicon.ico" rel="icon"/>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@2.3.1/dist/purify.min.js"></script>
+    <script type="module">
+        import { createDialog } from './scripts/labs/customdialogs.js';
+    </script>
+
+<body>
+    <!-- A modal dialog containing a form -->
+<dialog id="favDialog">
+    <form method="dialog">
+      <p>
+        <label>Favorite animal:
+          <select>
+            <option value="default">Choose…</option>
+            <option>Brine shrimp</option>
+            <option>Red panda</option>
+            <option>Spider monkey</option>
+          </select>
+        </label>
+      </p>
+      <div>
+        <button type="button" value="cancel">Cancel</button>
+        <button type="button" id="confirmBtn" value="default">Confirm</button>
+      </div>
+    </form>
+  </dialog>
+  <p>
+    <button id="showDialog">Show the dialog</button>
+  </p>
+  <output></output>
+  
+</body>
+
+</html>
+
