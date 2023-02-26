@@ -25,7 +25,7 @@
                     }
                     else if (button.id == "confirmButton") {
                         result = confirm("Do you confirm this?");
-                        output.textContent = `The value returned by the confirm method is: ${result}`;
+                        output.textContent = `Confirm returns: ${result}`;
                     }
                     else if (button.id == "promptButton") {
                         const input = prompt("What's your name?");
@@ -34,19 +34,19 @@
                             output.textContent = "User didn't enter a name!";
                         }
                         else if (input != null) {
-                            output.textContent = `The value returned by the prompt method is: ${input}`;
+                            output.textContent = `Hi, ${input}!`;
                         }
                         else {
                             output.textContent = "The prompt was cancelled!";
                         }
                     }
-                    else if (button.id == "What's your name?") {
-                        const input = prompt("Enter some text which will be purified!");
+                    else if (button.id == "safeButton") {
+                        const input = prompt("What's your name?");
                         if (input == "") {
                             output.textContent = "User didn't enter a name!";
                         }
                         else if (input != null) {
-                            output.textContent = `The value returned by the prompt method is: ${DOMPurify.sanitize(input)}`;
+                            output.textContent = `Hi, ${DOMPurify.sanitize(input)}!`;
                         }
                         else {
                             output.textContent = "The prompt was cancelled!";
