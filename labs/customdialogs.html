@@ -8,36 +8,23 @@
     <meta name="author" content="Jeffrey Luu"/>
     <link href="assets/images/favicon.ico" rel="icon"/>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@2.3.1/dist/purify.min.js"></script>
+    <script src="customdialog.js"></script>
     <script type="module">
-        import { createDialog } from './scripts/labs/customdialogs.js';
+        import { init } from './customdialog.js';
+        init();
     </script>
+</head>
 
 <body>
     <!-- A modal dialog containing a form -->
-<dialog id="favDialog">
-    <form method="dialog">
-      <p>
-        <label>Favorite animal:
-          <select>
-            <option value="default">Choose…</option>
-            <option>Brine shrimp</option>
-            <option>Red panda</option>
-            <option>Spider monkey</option>
-          </select>
-        </label>
-      </p>
-      <div>
-        <button type="button" value="cancel">Cancel</button>
-        <button type="button" id="confirmBtn" value="default">Confirm</button>
-      </div>
-    </form>
-  </dialog>
+  <dialog id="myDialog"></dialog>
   <p>
-    <button id="showDialog">Show the dialog</button>
+    <button id="alertBtn" type="button">Alert</button>
+    <button id="confirmBtn" type="button">Confirm</button>
+    <button id="promptBtn" type="button">Prompt</button>
   </p>
   <output></output>
-  
+    <p>&nbsp;</p>
 </body>
-
 </html>
 

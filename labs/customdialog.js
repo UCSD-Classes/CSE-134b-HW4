@@ -1,18 +1,90 @@
-const showButton = document.getElementById('showDialog');
-const favDialog = document.getElementById('favDialog');
-const outputBox = document.querySelector('output');
-const selectEl = favDialog.querySelector('select');
-const confirmBtn = favDialog.querySelector('#confirmBtn');
+export function init() {
+  const myDialog = document.getElementById('myDialog');
+  const outputBox = document.querySelector('output');
 
-// "Update details" button opens the <dialog> modally
-showButton.addEventListener('click', () => {
-    favDialog.showModal();
-});
-// "Favorite animal" input sets the value of the submit button
-selectEl.addEventListener('change', (e) => {
-  confirmBtn.value = selectEl.value;
-});
-// "Confirm" button of form triggers "close" on dialog because of [method="dialog"]
-favDialog.addEventListener('close', () => {
-  outputBox.value = `ReturnValue: ${favDialog.returnValue}.`;
-});
+  const alertBtn = document.getElementById('alertBtn');
+
+  const confirmBtn = document.getElementById('confirmBtn');
+  
+  const promptBtn = document.getElementById('promptBtn');
+  
+  alertBtn.addEventListener('click', () => {
+    myDialog.innerHTML = `
+    <p> Alert was pressed! </p>
+    <button id="okBtn">OK</button>
+    `; 
+    myDialog.showModal();
+
+    let okBtn = document.getElementById('okBtn');
+
+    okBtn.addEventListener('click', () => {
+      myDialog.close();
+    });
+  });
+
+  confirmBtn.addEventListener('click', () => {
+    myDialog.innerHTML = `
+    <form method="dialog">
+      <p>Do you confirm this?</p>
+      <menu>
+        <button id="yesBtn" value="true">Yes</button>
+        <button id="noBtn" value="false">No</button>
+      </menu>
+    </form>
+    `;
+    myDialog.showModal();
+
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+
+    yesBtn.addEventListener('click', () => {
+      outputBox.textContent = `Confirm result: ${yesBtn.value}`;
+      myDialog.close();
+    });
+
+    noBtn.addEventListener('click', () => {
+      outputBox.textContent = `Confirm result: ${noBtn.value}`;
+      myDialog.close();
+    });
+
+  });
+
+  promptBtn.addEventListener('click', () => {
+    myDialog.innerHTML = `
+    <form method="dialog">
+      <p>What is your name?</p>
+      <input type="text" id="nameInput">
+      <menu>
+        <button id="okBtn" value="ok">OK</button>
+        <button id="cancelBtn" value="User cancelled the prompt">Cancel</button>
+      </menu>
+    </form>
+    `;
+    myDialog.showModal();
+
+    let okBtn = document.getElementById('okBtn');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const nameInput = document.getElementById('nameInput');
+
+    okBtn.addEventListener('click', () => {
+      if (nameInput.value === '') {
+        nameInput.value = 'User didn\'t enter a name';
+      }
+      outputBox.textContent = `Prompt result: ${nameInput.value}`;
+      myDialog.close();
+    });
+
+    cancelBtn.addEventListener('click', () => {
+      outputBox.textContent = `Prompt result: ${cancelBtn.value}`;
+      myDialog.close();
+    });
+
+  });
+
+  
+
+  return myDialog;
+
+}
+
+
