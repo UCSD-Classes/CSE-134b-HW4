@@ -24,7 +24,12 @@
     <button id="promptBtn" type="button">Prompt</button>
   </p>
   <output></output>
-    <p>&nbsp;</p>
+  <script>
+    // Dom purify the output
+    const output = document.querySelector('output');
+    output.textContent = `${DOMPurify.sanitize(output.textContent)}`;
+  </script>
+
 </body>
 </html>
 

@@ -81,10 +81,7 @@ export function init() {
 
   });
 
-  
-
   return myDialog;
-
 }
 
 
