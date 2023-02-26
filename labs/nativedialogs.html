@@ -22,17 +22,17 @@
                 button.addEventListener('click', () => {
                     let result = '';
                     if (button.id == "alertButton") {
-                        alert("This is an alert");
+                        alert("Alert Pressed!");
                     }
                     else if (button.id == "confirmButton") {
-                        result = confirm("This is a confirm");
+                        result = confirm("Do you confirm this?");
                         output.textContent = `The value returned by the confirm method is: ${result}`;
                     }
                     else if (button.id == "promptButton") {
-                        const input = prompt("Enter some text!");
+                        const input = prompt("What's your name?");
                         if (input == "") {
                             // Write the message "User didn't enter anything!" if they didn't enter anything
-                            output.textContent = "User didn't enter anything!";
+                            output.textContent = "User didn't enter a name!";
                         }
                         else if (input != null) {
                             output.textContent = `The value returned by the prompt method is: ${input}`;
@@ -41,10 +41,10 @@
                             output.textContent = "The prompt was cancelled!";
                         }
                     }
-                    else if (button.id == "safeButton") {
+                    else if (button.id == "What's your name?") {
                         const input = prompt("Enter some text which will be purified!");
                         if (input == "") {
-                            output.textContent = "User didn't enter anything!";
+                            output.textContent = "User didn't enter a name!";
                         }
                         else if (input != null) {
                             output.textContent = `The value returned by the prompt method is: ${DOMPurify.sanitize(input)}`;
