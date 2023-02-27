@@ -70,7 +70,9 @@ export function init() {
       if (nameInput.value === '') {
         nameInput.value = 'User didn\'t enter a name';
       }
-      outputBox.textContent = `Prompt result: ${nameInput.value}`;
+      // Dom Purify the input
+      const clean = DOMPurify.sanitize(nameInput.value);
+      outputBox.textContent = `Prompt result: ${clean}`;
       myDialog.close();
     });
 
