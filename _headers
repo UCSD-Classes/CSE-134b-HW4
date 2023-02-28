@@ -1,3 +1,16 @@
 /*
   Access-Control-Allow-Origin: *
-  
+    Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+    Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization
+    Access-Control-Allow-Credentials: true
+    Access-Control-Max-Age: 3600
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+    Date: Fri, 15 May 2020 14:00:00 GMT
+    Connection: keep-alive
+    Keep-Alive: timeout=5
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Frame-Options: DENY
+    Referrer-Policy: no-referrer
+*/
