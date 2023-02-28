@@ -8,15 +8,14 @@
     <meta name="keywords" content="HTML, CSS, JS"/>
     <meta name="author" content="Jeffrey Luu"/>
     <link href="assets/images/favicon.ico" rel="icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
     <link href="/styles/main.css" rel="stylesheet"/>
 
     <!---->
     <style>
-        html, body {
-            height: 100%;
-        }
-        #crudBlog {
 
+        h2 {
+            margin-bottom: 1rem;
         }
 
         dialog {
@@ -40,27 +39,49 @@
             }
         }
 
-
-        #postForm {
-
+        #postForm label {
+            display: inline-block;
+            text-align: left;
         }
 
-        #postSection {
+        /* Move the 7th and 8th labels to a new line */
+        #postForm label:nth-child(7),
+        #postForm label:nth-child(8) {
+            display: block;
+        }
+
+        #postForm input[type="text"], #postForm select {
+            display: inline-block;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        #postForm input[type="submit"], #postForm input[type="reset"] {
+            display: inline-block;
+            margin-right: 10px;
 
         }
 
         #postTable {
             margin-left: 1rem;
+            border: 4px solid var(--font-color);
+            margin-bottom: 1rem;
         }
 
-        button {
+        #postTable th {
+            padding: 0.5rem;
+            text-align: left;
+            background-color: var(--button1-color);
+        }
+
+        #addButton {
             display: inline-block;
             padding: 0.5rem 1rem;
             margin-left: 1rem;
             border: none;
             border-radius: 0.25rem;
             background-color: #007bff;
-            color: #fff;
+            color: var(--inverse-font-color);
             cursor: pointer;
         }
 
@@ -123,6 +144,8 @@
                     
                     <label for="summary">Description:</label>
                     <input type="text" id="summary" name="summary" placeholder="Summary">
+
+                    <p>&nbsp;</p>
                     <input type="submit" value="Save" onclick="createPost();return false;">
                     <input type="reset" value="Clear">
                     <input type="submit" value="Exit" onclick="exitDialog(); generateTable();">
@@ -145,7 +168,7 @@
                 </table>
             </section>
 
-            <button onclick="document.querySelector('dialog').showModal();">Add Class</button>
+            <button id ="addButton" onclick="document.querySelector('dialog').showModal();">Add Class</button>
 
         </section>
         <!-- On window load, call generateTable() to load posts from local storage-->
@@ -154,7 +177,7 @@
                 generateTable();
             };
         </script>
-        <script type="text/javascript" src="blog.js"></script>
+        <script type="text/javascript" src="styledblog.js"></script>
         <noscript>
             <p>Enable Javascript to use this application</p>
         </noscript>
