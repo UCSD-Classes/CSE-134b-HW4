@@ -1,5 +1,5 @@
 // define an array to store posts
-let posts = [];
+var posts = [];
 
 
 function createPost() {
