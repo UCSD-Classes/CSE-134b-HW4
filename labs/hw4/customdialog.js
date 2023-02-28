@@ -69,6 +69,7 @@ export function init() {
     okBtn.addEventListener('click', () => {
       if (nameInput.value === '') {
         nameInput.value = 'User didn\'t enter a name';
+        outputBox.textContent = `${nameInput.value}!`;
       }
       else {
         // Dom Purify the input
