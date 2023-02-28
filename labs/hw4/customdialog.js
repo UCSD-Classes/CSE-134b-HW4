@@ -69,6 +69,7 @@ export function init() {
     okBtn.addEventListener('click', () => {
       if (nameInput.value === '') {
         nameInput.value = 'User didn\'t enter a name!';
+        myDialog.close();
       }
       // Dom Purify the input
       const clean = DOMPurify.sanitize(nameInput.value);
