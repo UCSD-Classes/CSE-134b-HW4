@@ -56,7 +56,7 @@ export function init() {
       <input type="text" id="nameInput">
       <menu>
         <button id="okBtn" value="ok">OK</button>
-        <button id="cancelBtn" value="User cancelled the prompt">Cancel</button>
+        <button id="cancelBtn" value="User cancelled the prompt!">Cancel</button>
       </menu>
     </form>
     `;
@@ -68,16 +68,16 @@ export function init() {
 
     okBtn.addEventListener('click', () => {
       if (nameInput.value === '') {
-        nameInput.value = 'User didn\'t enter a name';
+        nameInput.value = 'User didn\'t enter a name!';
       }
       // Dom Purify the input
       const clean = DOMPurify.sanitize(nameInput.value);
-      outputBox.textContent = `Hi, ${clean}`;
+      outputBox.textContent = `Hi, ${clean}!`;
       myDialog.close();
     });
 
     cancelBtn.addEventListener('click', () => {
-      outputBox.textContent = `Hi, ${cancelBtn.value}`;
+      outputBox.textContent = `${cancelBtn.value}`;
       myDialog.close();
     });
 
