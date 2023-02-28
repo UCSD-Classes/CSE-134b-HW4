@@ -1,38 +1,57 @@
 // define an array to store posts
 let posts = [];
 
+
 function createPost() {
     // Get the values from the form
     const title = document.getElementById("title").value;
     const date = document.getElementById("date").value;
     const quarter = document.getElementById("quarter").value;
     const summary = document.getElementById("summary").value;
-
+    let flag = false;
     // Check if all fields are filled in
     if (title === "" || date === "" || quarter === "" || summary === "") {
         alert("Please fill in all fields!");
         return;
     }
+
+    // Check if title is already in the posts array
+    for (let i = 0; i < posts.length; i++) {
+        if (posts[i].title === title) {
+            // Get the index of the post
+            const index = getIndex(title);
+            // Update the post
+            posts[index] = {
+                title: title,
+                date: date,
+                quarter: quarter,
+                summary: summary
+            };
+            flag = true;
+        }
+    }
     
-    // Add the post to the table
-    const tbody = document.querySelector("table tbody");
-    const tr = document.createElement("tr");
-    tr.innerHTML = `<td>${title}</td>
-                    <td>${date}</td>
-                    <td>${quarter}</td>
-                    <td>${summary}</td>
-                    <td><button onclick="updatePost(this)">Edit</button></td>
-                    <td><button onclick="deletePost(this); generateTable()">Delete</button></td>`;
-    tbody.appendChild(tr);
+    if (!flag) {
+        // If post is not in the table, Add the post to the table
+        const tbody = document.querySelector("table tbody");
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${title}</td>
+                        <td>${date}</td>
+                        <td>${quarter}</td>
+                        <td>${summary}</td>
+                        <td><button onclick="updatePost(this)">Edit</button></td>
+                        <td><button onclick="deletePost(this); generateTable()">Delete</button></td>`;
+        tbody.appendChild(tr);
 
-    // Add the post to the array
-    posts.push({
-        title: title,
-        date: date,
-        quarter: quarter,
-        summary: summary
-    });
-
+        // Add the post to the array
+        posts.push({
+            title: title,
+            date: date,
+            quarter: quarter,
+            summary: summary
+        });
+    }
+    
     // Save the posts to local storage
     localStorage.setItem("posts", JSON.stringify(posts));
 
@@ -47,6 +66,17 @@ function setDate() {
     const date = new Date();
     // Set the date in the form
     document.getElementById("date").value = date.toISOString().substring(0, 10);
+}
+
+function getIndex(title) {
+    // Loop through the posts and find the index of the post
+    for (let i = 0; i < posts.length; i++) {
+        if (posts[i].title === title) {
+            return i;
+        }
+    }
+    return -1;
+
 }
 
 function updatePost(row) {
@@ -106,9 +136,6 @@ function generateTable() {
     }
 
 }
-
-// getPost needs a index, getIndex needs a title
-getPost(getIndex(title));
 
 function exitDialog() {
     // close dialog
