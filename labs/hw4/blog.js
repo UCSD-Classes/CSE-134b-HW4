@@ -131,6 +131,10 @@ function generateTable() {
 }
 
 function exitDialog() {
+
+    // reset the form
+    document.getElementById("postForm").reset();
+
     // close dialog
     document.getElementById("postDialog").close();
 }
