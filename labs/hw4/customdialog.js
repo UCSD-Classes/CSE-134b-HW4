@@ -72,12 +72,12 @@ export function init() {
       }
       // Dom Purify the input
       const clean = DOMPurify.sanitize(nameInput.value);
-      outputBox.textContent = `Prompt result: ${clean}`;
+      outputBox.textContent = `Hi, ${clean}`;
       myDialog.close();
     });
 
     cancelBtn.addEventListener('click', () => {
-      outputBox.textContent = `Prompt result: ${cancelBtn.value}`;
+      outputBox.textContent = `Hi, ${cancelBtn.value}`;
       myDialog.close();
     });
 
