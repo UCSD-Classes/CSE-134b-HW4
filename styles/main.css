@@ -101,6 +101,7 @@ h2 {
   display: flex;
   justify-content: flex-end;
   text-align: right;
+  margin-bottom: 1.5rem;
 }
 
 /* TODO Replace with a hamburger menu for mobile for HW4 */

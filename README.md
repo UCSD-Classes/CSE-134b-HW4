@@ -8,6 +8,8 @@
 
 ## Notes
 
+Use the "Link" button at the top to navigate to HW4 pages.
+
 Here are some additional links for convenience:
 
 - [GitHub Repo](<https://github.com/jdluu/CSE-134b-HW4>)

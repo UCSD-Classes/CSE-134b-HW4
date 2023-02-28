@@ -61,13 +61,6 @@ function createPost() {
     exitDialog();   
 }
 
-function setDate() {
-    // Get the current date
-    const date = new Date();
-    // Set the date in the form
-    document.getElementById("date").value = date.toISOString().substring(0, 10);
-}
-
 function getIndex(title) {
     // Loop through the posts and find the index of the post
     for (let i = 0; i < posts.length; i++) {

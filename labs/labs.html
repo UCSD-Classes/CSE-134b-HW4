@@ -3,14 +3,17 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>CSE 134b HW3 HTML Portfolio</title>
+    <title>CSE 134b HW4 HTML Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="keywords" content="HTML"/>
+    <meta name="keywords" content="HTML, CSS, JS"/>
     <meta name="author" content="Jeffrey Luu"/>
-    <link href="/assets/images/favicon.ico" rel="icon"/>
+    <link href="assets/images/favicon.ico" rel="icon"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--TODO Used for icons with javascript-->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" rel="stylesheet" > -->
     <link href="/styles/main.css" rel="stylesheet"/>
+
 </head>
 
 <body>
@@ -21,7 +24,7 @@
                 <li><a href="/index.html">Home</a></li>
                 <li><a href="/index.html#about">About</a></li>
                 <li><a href="/index.html#projects">Projects</a></li>
-                <li><a href="pages/labs.html">Labs</a></li>
+                <li><a href="/labs/labs.html">Labs</a></li>
                 <li><a href="/index.html#contact">Contact</a></li>
                 <li>
                     <section class="themeSwitchWrapper">
@@ -30,13 +33,35 @@
                             <span class="slider round"></span>
                           </label>
                     </section>
-                    <!-- TODO COMMENT JS AFTER-->
                     <script async src="/scripts/theme.js"></script>
                 </li>
             </ul>
         </nav>
     </header>
     <hr>
+    <body>
+        <main>
+            <p> &nbsp; </p>
+            <p> &nbsp; </p>
+            <section id="labs">
+                <h2> HW 1 Lab</h2>
+                <ul>
+                    <li><a href="/labs/hw1/labs.html">HTML Exploration</a></li>
+                </ul>
+                
+                <h2> Hw 4 Lab</h2>
+                <ol>
+                    <li><a href="/labs/hw4/nativedialogs.html">Native Dialogs</a></li>
+                    <li><a href="/labs/hw4/customdialogs.html">Custom Dialogs</a></li>
+                    <li><a href="/labs/hw4/crud.html">CRUD Application</a></li>
+                    <li><a href="/labs/hw4/styledcrud.html">Styled CRUD Application</a></li>
+                </ol>
+            </section>
+            
+        </main>
+    </body>
+    
+
     <footer>
         <hr>
         <section>
@@ -48,6 +73,7 @@
             </ul>
         </section>
     </footer>
+
 </body>
 
 </html>
