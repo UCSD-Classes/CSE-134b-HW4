@@ -5,13 +5,10 @@ function createPost() {
     console.log("Creating post");
     // Get the values from the form
     const title = document.getElementById("title").value;
-    console.log(title);
     const date = document.getElementById("date").value;
-    console.log(date);
     const quarter = document.getElementById("quarter").value;
-    console.log(quarter);
     const summary = document.getElementById("summary").value;
-    console.log(summary);
+    // Declare other variables
     let flag = false;
     let post = {};
     
@@ -21,10 +18,8 @@ function createPost() {
         return;
     }
 
-    console.log("Outside null check")
     if (posts !== null && posts.length > 0) {
         // Check if title is already in the posts array
-        console.log("Inside null check")
         const index = getIndex(title);
         if (index >= 0) {
             // Update the post
@@ -58,14 +53,6 @@ function createPost() {
             quarter: quarter,
             summary: summary
         };
-        console.log("This is the post title: " + post.title);
-        console.log("This is the post date: " + post.date);
-        console.log("This is the post quarter: " + post.quarter);
-        console.log("This is the post summary: " + post.summary);
-
-        console.log("This is the post: " + post);
-        console.log("this is the posts array: " + posts);
-
         // Add the post to the array
         posts.push(post);
     }
@@ -81,7 +68,6 @@ function createPost() {
 }
 
 function getIndex(title) {
-    console.log("Getting index");
     // Loop through the posts and find the index of the post
     for (let i = 0; i < posts.length; i++) {
         if (posts[i].title === title) {
@@ -89,11 +75,9 @@ function getIndex(title) {
         }
     }
     return -1;
-
 }
 
 function updatePost(row) {
-    console.log("Updating post")
     const selectedRow = row.parentElement.parentElement;
 
     const title = selectedRow.cells[0].innerHTML;
@@ -112,7 +96,6 @@ function updatePost(row) {
 
 
 function deletePost(row) {
-    console.log("Deleting post")
     const selectedRow = row.parentElement.parentElement;
     const title = selectedRow.cells[0].innerHTML;
     for (let i = 0; i < posts.length; i++) {
@@ -126,7 +109,6 @@ function deletePost(row) {
 }
 
 function generateTable() {
-    console.log("Generating table");
     // Get the table body
     const tbody = document.querySelector("table tbody");
     tbody.innerHTML = "";
@@ -151,5 +133,4 @@ function generateTable() {
                         <td><button onclick="deletePost(this)">Delete</button></td>`;
         tbody.appendChild(tr);
     }
-    console.log("Generating table");
 }
