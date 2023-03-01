@@ -8,6 +8,7 @@ function initialize() {
 
     // If there are no posts, create an empty array
     if (posts === null) {
+        console.log("turned the array unnull");
         posts = [];
     }
 
