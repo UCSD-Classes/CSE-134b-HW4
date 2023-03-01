@@ -27,6 +27,7 @@ function createPost() {
     const summary = document.getElementById("summary").value;
     console.log(summary);
     let flag = false;
+    let post = {};
     
     // Check if all fields are filled in
     if (title === "" || date === "" || quarter === "" || summary === "") {
@@ -65,7 +66,7 @@ function createPost() {
         tbody.appendChild(tr);
 
         // Create a post object
-        const post = {
+        post = {
             title: title,
             date: date,
             quarter: quarter,
