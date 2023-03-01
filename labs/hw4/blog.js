@@ -15,19 +15,21 @@ function createPost() {
         return;
     }
 
-    // Check if title is already in the posts array
-    for (let i = 0; i < posts.length; i++) {
-        if (posts[i].title === title) {
-            // Get the index of the post
-            const index = getIndex(title);
-            // Update the post
-            posts[index] = {
-                title: title,
-                date: date,
-                quarter: quarter,
-                summary: summary
-            };
-            flag = true;
+    if (posts.length > 0) {
+        // Check if title is already in the posts array
+        for (let i = 0; i < posts.length; i++) {
+            if (posts[i].title === title) {
+                // Get the index of the post
+                const index = getIndex(title);
+                // Update the post
+                posts[index] = {
+                    title: title,
+                    date: date,
+                    quarter: quarter,
+                    summary: summary
+                };
+                flag = true;
+            }
         }
     }
     
