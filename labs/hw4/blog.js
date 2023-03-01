@@ -55,9 +55,7 @@ function createPost() {
     // Save the posts to local storage
     localStorage.setItem("posts", JSON.stringify(posts));
 
-    // Reset the form
-    document.getElementById("postForm").reset();
-    // Close dialog
+    // Reset Form and Close dialog
     exitDialog();   
 }
 
