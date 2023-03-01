@@ -53,7 +53,7 @@
                 <input type="text" id="summary" name="summary" placeholder="Summary">
                 <input type="submit" value="Save" onclick="createPost()">
                 <input type="reset" value="Clear">
-                <input type="submit" value="Exit" onclick="exitDialog(); generateTable();">
+                <input type="submit" value="Exit" onclick="document.querySelector('dialog').close(); generateTable();">
             </form>
         </dialog>
 
