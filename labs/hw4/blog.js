@@ -35,6 +35,7 @@ function createPost() {
     }
 
     console.log("Outside null check")
+    initialize();
     if (posts !== null && posts.length > 0) {
         // Check if title is already in the posts array
         console.log("Inside null check")
