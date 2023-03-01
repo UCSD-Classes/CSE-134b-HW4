@@ -1,21 +1,6 @@
 // define an array to store posts
 let posts = [];
 
-function initialize() {
-    console.log("Initializing");
-    // Get the posts from local storage
-    posts = JSON.parse(localStorage.getItem("posts"));
-
-    // If there are no posts, create an empty array
-    if (posts === null) {
-        console.log("turned the array unnull");
-        posts = [];
-    }
-
-    // Generate the table
-    generateTable();
-}
-
 function createPost() {
     console.log("Creating post");
     // Get the values from the form
@@ -37,7 +22,6 @@ function createPost() {
     }
 
     console.log("Outside null check")
-    initialize();
     if (posts !== null && posts.length > 0) {
         // Check if title is already in the posts array
         console.log("Inside null check")
@@ -152,6 +136,7 @@ function generateTable() {
 
     // If there are no posts, return
     if (posts === null) {
+        posts = [];
         return;
     }
 
