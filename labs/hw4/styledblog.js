@@ -131,7 +131,7 @@ function generateTable() {
                         <td>${quarter}</td>
                         <td>${summary}</td>
                         <td><button onclick="updatePost(this)"><i class="fa-solid fa-pencil fa-2x"></i></button></td>
-                        <td><button onclick="deletePost(this); generateTable()"><i class="fa-solid fa-trash fa-2x"></i></button></td>
+                        <td><button onclick="deletePost(this)"><i class="fa-solid fa-trash fa-2x"></i></button></td>
                         `;
         tbody.appendChild(tr);
     }
