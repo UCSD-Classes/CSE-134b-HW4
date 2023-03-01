@@ -1,6 +1,15 @@
 // define an array to store posts
 let posts = [];
 
+function initializePosts() {
+    console.log("Initializing posts");
+    // Get the posts from local storage
+    posts = JSON.parse(localStorage.getItem("posts"));
+    if (posts === null) {
+        posts = [];
+    }
+    generateTable();
+}
 
 function createPost() {
     console.log("Creating post");
