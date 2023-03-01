@@ -16,7 +16,7 @@ function createPost() {
         return;
     }
 
-    if (Array.isArray(posts)) {
+    if (posts.length > 0) {
         // Check if title is already in the posts array
         const index = getIndex(title);
         if (index >= 0) {
@@ -29,12 +29,7 @@ function createPost() {
             };
             flag = true;
         }
-    }
-
-
-
-    
-      
+    }  
     
     if (!flag) {
         // If post is not in the table, Add the post to the table
@@ -63,8 +58,11 @@ function createPost() {
     // Save the posts to local storage
     localStorage.setItem("posts", JSON.stringify(posts));
 
-    // Reset Form and Close dialog
-    exitDialog();   
+    // Reset the form
+    document.getElementById("postForm").reset();
+
+    //Close dialog
+    document.querySelector('dialog').close();
 }
 
 function getIndex(title) {
@@ -139,14 +137,3 @@ function generateTable() {
     }
     console.log("Generating table");
 }
-
-function exitDialog() {
-    console.log("Exiting dialog");
-
-    // reset the form
-    document.getElementById("postForm").reset();
-
-    // close dialog
-    document.getElementById("postDialog").close();
-}
-
