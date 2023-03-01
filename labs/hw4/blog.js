@@ -66,12 +66,14 @@ function createPost() {
         tbody.appendChild(tr);
 
         // Create a post object
+        console.log("Creating post object")
         post = {
             title: title,
             date: date,
             quarter: quarter,
             summary: summary
         };
+        console.log("This is the post: " + post);
 
         // Add the post to the array
         posts.push(post);
