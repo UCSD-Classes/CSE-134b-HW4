@@ -16,19 +16,24 @@ function createPost() {
         return;
     }
 
-
-    // Check if title is already in the posts array
-    const index = getIndex(title);
-    if (index >= 0) {
-        // Update the post
-        posts[index] = {
-            title: title,
-            date: date,
-            quarter: quarter,
-            summary: summary
-        };
-        flag = true;
+    if (Array.isArray(posts)) {
+        // Check if title is already in the posts array
+        const index = getIndex(title);
+        if (index >= 0) {
+            // Update the post
+            posts[index] = {
+                title: title,
+                date: date,
+                quarter: quarter,
+                summary: summary
+            };
+            flag = true;
+        }
     }
+
+
+
+    
       
     
     if (!flag) {
