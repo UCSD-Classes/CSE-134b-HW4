@@ -14,12 +14,14 @@ function createPost() {
     console.log(summary);
     let flag = false;
     
+    console.log("Right before empty fields check")
     // Check if all fields are filled in
     if (title === "" || date === "" || quarter === "" || summary === "") {
         alert("Please fill in all fields!");
         return;
     }
 
+    console.log("Right before null posts check")
     if (posts !== null && posts.length > 0) {
         // Check if title is already in the posts array
         const index = getIndex(title);
