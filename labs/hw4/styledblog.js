@@ -42,8 +42,7 @@ function createPost() {
                         <td>${quarter}</td>
                         <td>${summary}</td>
                         <td><button onclick="updatePost(this)"><i class="fa-solid fa-pencil fa-2x"></i></button></td>
-                        <td><button onclick="deletePost(this); generateTable()"><i class="fa-solid fa-trash fa-2x"></i></button></td>
-                        `;
+                        <td><button onclick="deletePost(this); generateTable()"><i class="fa-solid fa-trash fa-2x"></i></button></td>`;
         tbody.appendChild(tr);
 
         // Create a post object
@@ -126,13 +125,12 @@ function generateTable() {
     // Loop through the posts and add them to the table
     for (let post of posts) {
         const tr = document.createElement("tr");
-        tr.innerHTML = `<td>${title}</td>
-                        <td>${date}</td>
-                        <td>${quarter}</td>
-                        <td>${summary}</td>
+        tr.innerHTML = `<td>${post.title}</td>
+                        <td>${post.date}</td>
+                        <td>${post.quarter}</td>
+                        <td>${post.summary}</td>
                         <td><button onclick="updatePost(this)"><i class="fa-solid fa-pencil fa-2x"></i></button></td>
-                        <td><button onclick="deletePost(this)"><i class="fa-solid fa-trash fa-2x"></i></button></td>
-                        `;
+                        <td><button onclick="deletePost(this); generateTable()"><i class="fa-solid fa-trash fa-2x"></i></button></td>`;
         tbody.appendChild(tr);
     }
 }
