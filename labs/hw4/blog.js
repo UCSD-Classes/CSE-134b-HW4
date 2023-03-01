@@ -9,6 +9,10 @@ function createPost() {
     const quarter = document.getElementById("quarter").value;
     const summary = document.getElementById("summary").value;
     let flag = false;
+    console.log(title);
+    console.log(date);
+    console.log(quarter);
+    console.log(summary);
     // Check if all fields are filled in
     if (title === "" || date === "" || quarter === "" || summary === "") {
         alert("Please fill in all fields!");
