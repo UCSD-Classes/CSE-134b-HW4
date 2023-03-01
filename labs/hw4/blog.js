@@ -3,6 +3,7 @@ let posts = [];
 
 
 function createPost() {
+    console.log("Creating post");
     // Get the values from the form
     const title = document.getElementById("title").value;
     const date = document.getElementById("date").value;
@@ -62,6 +63,7 @@ function createPost() {
 }
 
 function getIndex(title) {
+    console.log("Getting index");
     // Loop through the posts and find the index of the post
     for (let i = 0; i < posts.length; i++) {
         if (posts[i].title === title) {
@@ -73,6 +75,7 @@ function getIndex(title) {
 }
 
 function updatePost(row) {
+    console.log("Updating post")
     const selectedRow = row.parentElement.parentElement;
 
     const title = selectedRow.cells[0].innerHTML;
@@ -91,6 +94,7 @@ function updatePost(row) {
 
 
 function deletePost(row) {
+    console.log("Deleting post")
     const selectedRow = row.parentElement.parentElement;
     const title = selectedRow.cells[0].innerHTML;
     for (let i = 0; i < posts.length; i++) {
@@ -104,6 +108,7 @@ function deletePost(row) {
 }
 
 function generateTable() {
+    console.log("Generating table");
     // Get the table body
     const tbody = document.querySelector("table tbody");
     tbody.innerHTML = "";
@@ -131,6 +136,7 @@ function generateTable() {
 }
 
 function exitDialog() {
+    console.log("Exiting dialog");
 
     // reset the form
     document.getElementById("postForm").reset();
