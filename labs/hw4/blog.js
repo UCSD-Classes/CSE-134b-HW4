@@ -16,7 +16,7 @@ function createPost() {
         return;
     }
 
-    if (posts.length > 0) {
+    if (posts !== null && posts.length > 0) {
         // Check if title is already in the posts array
         const index = getIndex(title);
         if (index >= 0) {
