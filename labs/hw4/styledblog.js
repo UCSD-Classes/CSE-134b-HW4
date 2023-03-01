@@ -1,7 +1,6 @@
 // define an array to store posts
 let posts = [];
 
-
 function createPost() {
     console.log("Creating post");
     // Get the values from the form
@@ -9,7 +8,10 @@ function createPost() {
     const date = document.getElementById("date").value;
     const quarter = document.getElementById("quarter").value;
     const summary = document.getElementById("summary").value;
+    // Declare other variables
     let flag = false;
+    let post = {};
+    
     // Check if all fields are filled in
     if (title === "" || date === "" || quarter === "" || summary === "") {
         alert("Please fill in all fields!");
@@ -44,13 +46,16 @@ function createPost() {
                         `;
         tbody.appendChild(tr);
 
-        // Add the post to the array
-        posts.push({
+        // Create a post object
+        console.log("Creating post object")
+        post = {
             title: title,
             date: date,
             quarter: quarter,
             summary: summary
-        });
+        };
+        // Add the post to the array
+        posts.push(post);
     }
     
     // Save the posts to local storage
@@ -64,7 +69,6 @@ function createPost() {
 }
 
 function getIndex(title) {
-    console.log("Getting index");
     // Loop through the posts and find the index of the post
     for (let i = 0; i < posts.length; i++) {
         if (posts[i].title === title) {
@@ -72,11 +76,9 @@ function getIndex(title) {
         }
     }
     return -1;
-
 }
 
 function updatePost(row) {
-    console.log("Updating post")
     const selectedRow = row.parentElement.parentElement;
 
     const title = selectedRow.cells[0].innerHTML;
@@ -95,7 +97,6 @@ function updatePost(row) {
 
 
 function deletePost(row) {
-    console.log("Deleting post")
     const selectedRow = row.parentElement.parentElement;
     const title = selectedRow.cells[0].innerHTML;
     for (let i = 0; i < posts.length; i++) {
@@ -109,7 +110,6 @@ function deletePost(row) {
 }
 
 function generateTable() {
-    console.log("Generating table");
     // Get the table body
     const tbody = document.querySelector("table tbody");
     tbody.innerHTML = "";
@@ -119,6 +119,7 @@ function generateTable() {
 
     // If there are no posts, return
     if (posts === null) {
+        posts = [];
         return;
     }
 
@@ -134,5 +135,4 @@ function generateTable() {
                         `;
         tbody.appendChild(tr);
     }
-    console.log("Generating table");
 }
