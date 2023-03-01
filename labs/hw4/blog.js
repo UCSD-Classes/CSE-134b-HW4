@@ -69,7 +69,6 @@ function getIndex(title) {
         }
     }
     return -1;
-
 }
 
 function updatePost(row) {
