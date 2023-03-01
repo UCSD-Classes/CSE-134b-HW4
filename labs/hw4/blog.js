@@ -48,13 +48,16 @@ function createPost() {
                         <td><button onclick="deletePost(this); generateTable()">Delete</button></td>`;
         tbody.appendChild(tr);
 
-        // Add the post to the array
-        posts.push({
+        // Create a post object
+        const post = {
             title: title,
             date: date,
             quarter: quarter,
             summary: summary
-        });
+        };
+
+        // Add the post to the array
+        posts.push(post);
     }
     
     // Save the posts to local storage
