@@ -73,7 +73,10 @@ function createPost() {
             quarter: quarter,
             summary: summary
         };
-        console.log("This is the post: " + post);
+        console.log("This is the post title: " + post.title);
+        console.log("This is the post date: " + post.date);
+        console.log("This is the post quarter: " + post.quarter);
+        console.log("This is the post summary: " + post.summary);
 
         // Add the post to the array
         posts.push(post);
