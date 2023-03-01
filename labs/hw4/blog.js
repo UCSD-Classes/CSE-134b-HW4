@@ -17,20 +17,18 @@ function createPost() {
     }
 
 
-    if (posts.length > 0) {
-        // Check if title is already in the posts array
-        const index = getIndex(title);
-        if (index >= 0) {
-          // Update the post
-          posts[index] = {
+    // Check if title is already in the posts array
+    const index = getIndex(title);
+    if (index >= 0) {
+        // Update the post
+        posts[index] = {
             title: title,
             date: date,
             quarter: quarter,
             summary: summary
-          };
-          flag = true;
-        }
-      }
+        };
+        flag = true;
+    }
       
     
     if (!flag) {
