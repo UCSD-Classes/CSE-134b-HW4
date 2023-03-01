@@ -5,14 +5,15 @@ function createPost() {
     console.log("Creating post");
     // Get the values from the form
     const title = document.getElementById("title").value;
-    const date = document.getElementById("date").value;
-    const quarter = document.getElementById("quarter").value;
-    const summary = document.getElementById("summary").value;
-    let flag = false;
     console.log(title);
+    const date = document.getElementById("date").value;
     console.log(date);
+    const quarter = document.getElementById("quarter").value;
     console.log(quarter);
+    const summary = document.getElementById("summary").value;
     console.log(summary);
+    let flag = false;
+    
     // Check if all fields are filled in
     if (title === "" || date === "" || quarter === "" || summary === "") {
         alert("Please fill in all fields!");
