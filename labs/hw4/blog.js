@@ -127,10 +127,14 @@ function generateTable() {
                         <td><button onclick="deletePost(this)">Delete</button></td>`;
         tbody.appendChild(tr);
     }
-
+    console.log("Generating table");
 }
 
 function exitDialog() {
+
+    // reset the form
+    document.getElementById("postForm").reset();
+
     // close dialog
     document.getElementById("postDialog").close();
 }
