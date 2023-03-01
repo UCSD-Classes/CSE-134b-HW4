@@ -1,6 +1,20 @@
 // define an array to store posts
 let posts = [];
 
+function initialize() {
+    console.log("Initializing");
+    // Get the posts from local storage
+    posts = JSON.parse(localStorage.getItem("posts"));
+
+    // If there are no posts, create an empty array
+    if (posts === null) {
+        posts = [];
+    }
+
+    // Generate the table
+    generateTable();
+}
+
 function createPost() {
     console.log("Creating post");
     // Get the values from the form
@@ -14,16 +28,16 @@ function createPost() {
     console.log(summary);
     let flag = false;
     
-    console.log("Right before empty fields check")
     // Check if all fields are filled in
     if (title === "" || date === "" || quarter === "" || summary === "") {
         alert("Please fill in all fields!");
         return;
     }
 
-    console.log("Right before null posts check")
+    console.log("Outside null check")
     if (posts !== null && posts.length > 0) {
         // Check if title is already in the posts array
+        console.log("Inside null check")
         const index = getIndex(title);
         if (index >= 0) {
             // Update the post
