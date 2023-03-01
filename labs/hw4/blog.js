@@ -16,6 +16,11 @@ function createPost() {
         return;
     }
 
+    if (title === null || date === null || quarter === null || summary === null) {
+        alert("Please fill in all fields!");
+        return;
+    }
+
     if (posts !== null && posts.length > 0) {
         // Check if title is already in the posts array
         const index = getIndex(title);
