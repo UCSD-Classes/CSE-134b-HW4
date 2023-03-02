@@ -8,7 +8,7 @@
 
 ## Notes
 
-Use the "Link" button at the top to navigate to HW4 pages.
+Use the "Labs" button at the top to navigate to HW4 pages.
 
 Javascript Modules weren't used because whenever I tried to use them,
 I would get an error saying that different functions were undefined even
