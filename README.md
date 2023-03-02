@@ -10,6 +10,10 @@
 
 Use the "Link" button at the top to navigate to HW4 pages.
 
+Javascript Modules weren't used because whenever I tried to use them,
+I would get an error saying that different functions were undefined even
+though I made sure to export them before they were callled.
+
 Native Dialogs is done in nativedialogs.html
 
 Custom Dialogs is done in customdialogs.html and customdialog.js
@@ -17,7 +21,6 @@ Custom Dialogs is done in customdialogs.html and customdialog.js
 CRUD is done in crud.html and blog.js
 
 Styled CRUD is done in styledcrud.html and styledblog.js
-
 
 Here are some additional links for convenience:
 
