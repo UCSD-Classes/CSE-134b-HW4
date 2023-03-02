@@ -1,5 +1,8 @@
 // define an array to store posts
 let posts = [];
+// Define a flag to check if the post is in the table
+let flag = false;
+let prevTitle = "";
 
 function createPost() {
     console.log("Creating post");
@@ -9,7 +12,6 @@ function createPost() {
     const quarter = document.getElementById("quarter").value;
     const summary = document.getElementById("summary").value;
     // Declare other variables
-    let flag = false;
     let post = {};
     
     // Check if all fields are filled in
@@ -20,7 +22,8 @@ function createPost() {
 
     if (posts !== null && posts.length > 0) {
         // Check if title is already in the posts array
-        const index = getIndex(title);
+        const index = getIndex(prevTitle);
+        console.log("Index: " + index);
         if (index >= 0) {
             // Update the post
             posts[index] = {
@@ -31,7 +34,7 @@ function createPost() {
             };
             flag = true;
         }
-    }  
+    }
     
     if (!flag) {
         // If post is not in the table, Add the post to the table
@@ -56,6 +59,7 @@ function createPost() {
         // Add the post to the array
         posts.push(post);
     }
+    flag = false;
     
     // Save the posts to local storage
     localStorage.setItem("posts", JSON.stringify(posts));
@@ -89,6 +93,8 @@ function updatePost(row) {
     document.getElementById("date").value = date;
     document.getElementById("quarter").value = quarter;
     document.getElementById("summary").value = summary;
+
+    prevTitle = title;
 
     document.querySelector("dialog").showModal();
 }
@@ -130,7 +136,7 @@ function generateTable() {
                         <td>${post.quarter}</td>
                         <td>${post.summary}</td>
                         <td><button onclick="updatePost(this)"><i class="fa-solid fa-pencil fa-2x"></i></button></td>
-                        <td><button onclick="deletePost(this); generateTable()"><i class="fa-solid fa-trash fa-2x"></i></button></td>`;
+                        <td><button onclick="deletePost(this);"><i class="fa-solid fa-trash fa-2x"></i></button></td>`;
         tbody.appendChild(tr);
     }
 }
