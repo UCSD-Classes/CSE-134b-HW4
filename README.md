@@ -10,6 +10,15 @@
 
 Use the "Link" button at the top to navigate to HW4 pages.
 
+Native Dialogs is done in nativedialogs.html
+
+Custom Dialogs is done in customdialogs.html and customdialog.js
+
+CRUD is done in crud.html and blog.js
+
+Styled CRUD is done in styledcrud.html and styledblog.js
+
+
 Here are some additional links for convenience:
 
 - [GitHub Repo](<https://github.com/jdluu/CSE-134b-HW4>)
