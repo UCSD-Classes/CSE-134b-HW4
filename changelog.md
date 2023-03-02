@@ -2,7 +2,7 @@
 
 1. Finished HW4 Native dialog, custom dialog, crud, and styled crud.
 
-2. Added in Google Analytics for tracking.
+2. Added in Google Analytics for tracking site visitors.
 
 3. Added in theme switching feature between light and dark mode.
 
